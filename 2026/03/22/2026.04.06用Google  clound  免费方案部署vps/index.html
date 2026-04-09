@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="阿九">
+    
+    <title>
+        
+            用Google  clound  免费方案部署vps |
+        
+        阿九的博客
+    </title>
+    
+<link rel="stylesheet" href="/bolg-source/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/bolg-source/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/bolg-source/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/bolg-source/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/bolg-source/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/bolg-source/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"ajiu21909.github.io","root":"/bolg-source/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"阿九的博客","author":"阿九","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Persistent Advancement||学海无涯","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/ajiu21909","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2026,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/bolg-source","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/bolg-source/">
+                    <img src="/bolg-source/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/bolg-source/">
+               阿九的博客
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/bolg-source/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/bolg-source/archives">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/bolg-source/tags">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/bolg-source/categories">
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/bolg-source/about">
+                                
+                                ABOUT
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/bolg-source/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/bolg-source/archives">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/bolg-source/tags">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/bolg-source/categories">
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/bolg-source/about">
+                            
+                            ABOUT
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        用Google  clound  免费方案部署vps
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/bolg-source/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">阿九</span>
+                                
+                                    <span class="author-badge">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-03-22 21:20:07</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Wed Apr 08 2026 11:18:04 GMT+0000">2026-04-08 11:18:04</span>
+                </span>
+            
+        
+
+        
+
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.8k Words</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>10 Mins</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="用Google-clound-免费方案部署vps"><a href="#用Google-clound-免费方案部署vps" class="headerlink" title="用Google  clound  免费方案部署vps"></a>用Google  clound  免费方案部署vps</h1><p><strong>免费政策</strong>：新人300美金的赠金（三个月）、使用免费层级（每月 1 个非抢占式 <code>e2-micro</code> 虚拟机实例、每月 30 GB 标准永久性磁盘、每月200g的出站流量，但不包括于cloundflare交互的流量）</p>
+<p><strong>流程</strong>：准备一个域名，托管到cloudflare，然后再Google clound中按要求创建一个VM实例，通过ssh连接进入Linux系统后，用yonggekkk的sing-box-yg项目，一键部署vps（sudo -i     、bash &lt;(wget -qO- <a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)%EF%BC%89%E3%80%82%E6%9C%9F%E9%97%B4%EF%BC%8C%E5%9C%A8Google" >https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)）。期间，在Google<i class="fas fa-external-link-alt"></i></a> clound的VM中添加DNS记录、允许HTTP和HTTPS协议，将防火墙出入站端口都开放，部署后就会生成五个协议的订阅节点，分别是：Vless-reality-vision、Vmess-ws(tls)&#x2F;Argo、Hysteria-2、Tuic-v5、Anytls。</p>
+<h2 id="一、一句话总原理"><a href="#一、一句话总原理" class="headerlink" title="一、一句话总原理"></a>一、一句话总原理</h2><p><strong>它是在你的 VPS &#x2F; Serv00 上，一键安装并启动一个 “加密流量转发服务”，把你的上网流量加密、伪装、转发到外网，实现安全翻墙。</strong></p>
+<hr>
+<h2 id="二、完整流程（超简单）"><a href="#二、完整流程（超简单）" class="headerlink" title="二、完整流程（超简单）"></a>二、完整流程（超简单）</h2><ol>
+<li><strong>你用客户端（手机 &#x2F; 电脑）发出上网请求</strong></li>
+<li><strong>请求被加密 + 伪装</strong>（看起来像普通上网，不是翻墙）</li>
+<li><strong>发到你的 VPS &#x2F; Serv00 服务器</strong></li>
+<li><strong>服务器上的 sing-box 程序接收、解密、识别你要访问的网站</strong></li>
+<li><strong>服务器帮你去外网请求数据</strong></li>
+<li><strong>数据原路加密返回给你</strong></li>
+</ol>
+<p>→ 最终效果：<strong>你看不到墙，墙看不到你</strong></p>
+<hr>
+<h2 id="三、它到底干了哪-4-件事？（核心原理）"><a href="#三、它到底干了哪-4-件事？（核心原理）" class="headerlink" title="三、它到底干了哪 4 件事？（核心原理）"></a>三、它到底干了哪 4 件事？（核心原理）</h2><h3 id="1-安装核心程序：sing-box"><a href="#1-安装核心程序：sing-box" class="headerlink" title="1. 安装核心程序：sing-box"></a>1. 安装核心程序：sing-box</h3><p>这是一个<strong>现代化、高性能的代理核心</strong>，相当于 “翻墙发动机”。</p>
+<p>脚本自动帮你装、自动配好，不用你手动改配置。</p>
+<h3 id="2-同时开启多种翻墙协议（五协议-三协议）"><a href="#2-同时开启多种翻墙协议（五协议-三协议）" class="headerlink" title="2. 同时开启多种翻墙协议（五协议 &#x2F; 三协议）"></a>2. 同时开启多种翻墙协议（五协议 &#x2F; 三协议）</h3><ul>
+<li>VLESS Reality（最稳、最防封）</li>
+<li>VMess + WS + TLS（最通用）</li>
+<li>Hysteria2（超快）</li>
+<li>Tuic-v5（超稳）</li>
+<li>Anytls（抗封锁）</li>
+</ul>
+<p><strong>原理：多协议同时跑，一个被封换一个，保证永远能用。</strong></p>
+<h3 id="3-自动配置证书、端口、伪装"><a href="#3-自动配置证书、端口、伪装" class="headerlink" title="3. 自动配置证书、端口、伪装"></a>3. 自动配置证书、端口、伪装</h3><ul>
+<li>自动生成 UUID &#x2F; 密码</li>
+<li>自动配置 TLS 证书</li>
+<li>自动配置伪装路径</li>
+<li>自动生成可直接复制 &#x2F; 扫描的节点</li>
+</ul>
+<p>你不用懂技术，脚本全搞定。</p>
+<h3 id="4-自动做分流、解锁、加速"><a href="#4-自动做分流、解锁、加速" class="headerlink" title="4. 自动做分流、解锁、加速"></a>4. 自动做分流、解锁、加速</h3><ul>
+<li>国内网站直连，国外走代理</li>
+<li>自动解锁 ChatGPT、X、YouTube</li>
+<li>支持 WARP 二次转发，IP 更干净</li>
+<li>支持 Argo 隧道，进一步防封</li>
+</ul>
+<hr>
+<h2 id="四、和之前-CF-Workers-有什么区别？"><a href="#四、和之前-CF-Workers-有什么区别？" class="headerlink" title="四、和之前 CF Workers 有什么区别？"></a>四、和之前 CF Workers 有什么区别？</h2><table>
+<thead>
+<tr>
+<th align="left">方式</th>
+<th align="left">原理</th>
+<th align="left">优点</th>
+<th align="left">缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>CF Workers</strong></td>
+<td align="left">用 CF 免费服务器转发</td>
+<td align="left">免费、不用 VPS</td>
+<td align="left">速度一般、部分网站打不开</td>
+</tr>
+<tr>
+<td align="left"><strong>sing-box-yg</strong></td>
+<td align="left">用<strong>你自己的 VPS</strong>转发</td>
+<td align="left">超快、超稳、全解锁</td>
+<td align="left">需要 VPS 或 Serv00</td>
+</tr>
+</tbody></table>
+<p><strong>简单说：</strong></p>
+<ul>
+<li>CF 是<strong>免费公交车</strong></li>
+<li>sing-box-yg 是<strong>你自己的专车</strong></li>
+</ul>
+<hr>
+<h2 id="五、最关键：为什么它不容易被封？"><a href="#五、最关键：为什么它不容易被封？" class="headerlink" title="五、最关键：为什么它不容易被封？"></a>五、最关键：为什么它不容易被封？</h2><p>因为它用了这三层<strong>超强伪装</strong>：</p>
+<ol>
+<li><strong>TLS 加密</strong>：看起来就是正常 HTTPS 网站</li>
+<li><strong>WebSocket &#x2F; Reality</strong>：没有任何翻墙特征</li>
+<li><strong>标准端口 443 &#x2F; 80</strong>：和普通网站一模一样</li>
+</ol>
+<p>防火墙检测：<strong>这是正常网站，放行！</strong></p>
+<p>实际内容：<strong>是你的翻墙流量。</strong></p>
+<hr>
+<h2 id="六、终极极简总结"><a href="#六、终极极简总结" class="headerlink" title="六、终极极简总结"></a>六、终极极简总结</h2><p>sing-box-yg &#x3D; 一键帮你在服务器上搭建一个 “加密翻墙中转站”，</p>
+<p>用多种高级协议 + 多层伪装，把你的流量安全送到国外，</p>
+<p>速度快、稳定、防封、全解锁，而且全程自动化。</p>
+<hr>
+<h1 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释"></a>概念解释</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)</span><br></pre></td></tr></table></figure>
+
+<p>这条命令是<strong>在Linux系统上一键下载并执行远程脚本</strong>，核心作用是<strong>自动安装sing-box代理工具</strong>。 — ### 逐段拆解 - <code>bash</code>：用bash解释器运行脚本 - <code>&lt;(...)</code>：进程替换，把远程内容当成本地文件 。<code>wget -qO-</code>：静默下载，输出到标准输出 。后面网址：远程<code>sb.sh</code>脚本地址 </p>
+<h3 id="DNS记录类型："><a href="#DNS记录类型：" class="headerlink" title="DNS记录类型："></a>DNS记录类型：</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>全称</th>
+<th>核心含义</th>
+<th>通俗解释</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>A</strong></td>
+<td>Address Record</td>
+<td>域名 → IPv4 地址</td>
+<td>给域名绑定一个<strong>IPv4 服务器 IP</strong>，是最基础、最常用的记录</td>
+<td>所有需要通过域名访问 IPv4 服务器的场景（网站、代理、VPS 等）</td>
+</tr>
+<tr>
+<td><strong>AAAA</strong></td>
+<td>Quad-A Record</td>
+<td>域名 → IPv6 地址</td>
+<td>给域名绑定一个<strong>IPv6 服务器 IP</strong></td>
+<td>服务器支持 IPv6、需要面向 IPv6 用户访问时</td>
+</tr>
+<tr>
+<td><strong>CAA</strong></td>
+<td>Certification Authority Authorization</td>
+<td>限制证书颁发机构</td>
+<td>指定<strong>哪些 CA 机构能给你的域名发 SSL 证书</strong>，防止恶意发证</td>
+<td>提升域名安全，防止中间人攻击、证书滥用</td>
+</tr>
+<tr>
+<td><strong>CERT</strong></td>
+<td>Certificate Record</td>
+<td>存储证书</td>
+<td>在 DNS 中存储域名的公钥证书 &#x2F; 吊销列表，用于 DNSSEC 验证</td>
+<td>现在极少使用，个人用户基本不需要</td>
+</tr>
+<tr>
+<td><strong>CNAME</strong></td>
+<td>Canonical Name Record</td>
+<td>域名 → 另一个域名</td>
+<td>给域名起 “别名”，指向其他域名，不用重复绑定 IP</td>
+<td>多个域名指向同一个服务器、简化子域名管理时</td>
+</tr>
+<tr>
+<td><strong>DNSKEY</strong></td>
+<td>DNS Key Record</td>
+<td>存储 DNSSEC 公钥</td>
+<td>存储 DNSSEC 的加密公钥，用于验证 DNS 解析是否被篡改</td>
+<td>开启 DNSSEC 时自动配置，个人用户不用手动加</td>
+</tr>
+<tr>
+<td><strong>DS</strong></td>
+<td>Delegation Signer Record</td>
+<td>委托签名记录</td>
+<td>子域名 DNSSEC 的锚点，建立全球信任链，验证签名合法性</td>
+<td>开启 DNSSEC 时由域名注册商配置，无需手动添加</td>
+</tr>
+<tr>
+<td><strong>HTTPS</strong></td>
+<td>HTTPS Resource Record</td>
+<td>优化 HTTPS 配置</td>
+<td>在 DNS 中指定 HTTPS 服务的参数（ALPN、ECH 等），优化握手、隐藏流量特征</td>
+<td>对 HTTPS 性能、抗审查有要求的服务（如代理、HTTPS 网站）</td>
+</tr>
+</tbody></table>
+<h3 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h3><p><strong>0.0.0.0&#x2F;0</strong>：<strong>表示所有 IP 地址</strong>（0.0.0.0 到 255.255.255.255）。</p>
+<ul>
+<li>原理：&#x2F;0 表示子网掩码为 0.0.0.0，覆盖整个 IP 空间。</li>
+<li>常见用途：<strong>允许所有流量</strong>（防火墙白名单）或<strong>所有流量走代理</strong>（代理规则）。</li>
+</ul>
+<p><strong>192.168.2.0&#x2F;24</strong>：<strong>表示局域网内的所有 IP</strong>（192.168.2.1 到 192.168.2.254）。</p>
+<ul>
+<li>原理：&#x2F;24 表示前 24 位固定，最后 8 位可变，共 256 个地址。</li>
+<li>常见用途：<strong>放行内网流量</strong>（直连，不走代理）或<strong>限制仅内网可访问</strong>。</li>
+</ul>
+<h3 id="名称服务器"><a href="#名称服务器" class="headerlink" title="名称服务器"></a>名称服务器</h3><p>&#x3D; DNS 服务器，<strong>负责 “把域名翻译成 IP 地址” 的服务器</strong>，就叫<strong>名称服务器（Name Server &#x2F; NS 记录）</strong></p>
+<h3 id="自签的证书和自有域名的证书区别"><a href="#自签的证书和自有域名的证书区别" class="headerlink" title="自签的证书和自有域名的证书区别"></a>自签的证书和自有域名的证书区别</h3><ul>
+<li><strong>自签证书 &#x3D; 自己给自己发的身份证</strong></li>
+<li><strong>自有域名证书 &#x3D; 权威机构（CA）给你发的身份证</strong></li>
+</ul>
+<p>浏览器只认权威机构发的，不认你自己发的。</p>
+<p><strong>&#x3D;&#x3D;安全性方面&#x3D;&#x3D;：</strong></p>
+<p>自签证书</p>
+<ul>
+<li>加密本身没问题（也是 HTTPS 加密）</li>
+<li>但<strong>无法防中间人攻击</strong></li>
+<li>别人可以伪造一个同样的自签证书劫持你</li>
+</ul>
+<p>正规证书</p>
+<ul>
+<li>加密 + 认证 + 防中间人</li>
+<li>无法伪造</li>
+<li>域名所有权被验证过</li>
+</ul>
+<p>&#x3D;&#x3D;<strong>有效期方面：</strong>&#x3D;&#x3D;</p>
+<p>自签证书</p>
+<ul>
+<li>想设多久设多久（10 年、20 年都行）</li>
+</ul>
+<p>正规证书</p>
+<ul>
+<li>一般 90 天（Let’s Encrypt）</li>
+<li>但可以自动续签，不用管</li>
+</ul>
+<h3 id="uuid、TLS、WARP、serv00解释"><a href="#uuid、TLS、WARP、serv00解释" class="headerlink" title="uuid、TLS、WARP、serv00解释"></a>uuid、TLS、WARP、serv00解释</h3><h5 id="1-UUID"><a href="#1-UUID" class="headerlink" title="1. UUID"></a>1. UUID</h5><p><strong>简单说：就是你代理服务的 “专属账号 &#x2F; 身份码”</strong></p>
+<ul>
+<li>长得像一串随机字母数字：<code>7b81f6ab-9a09-4e97-a28c-d25363aa6d27</code></li>
+<li>作用：<strong>只有带对这个 UUID 的客户端，才能连上你的 VPS 代理</strong></li>
+<li>相当于：代理的用户名 + 密码二合一</li>
+<li>你链接里出现两次 UUID，是 TUIC 协议的格式要求，正常的</li>
+</ul>
+<hr>
+<h5 id="2-TLS"><a href="#2-TLS" class="headerlink" title="2. TLS"></a>2. TLS</h5><p><strong>简单说：给网络流量 “加密 + 上锁” 的技术</strong></p>
+<ul>
+<li><p>我们平时上网看到的小锁 HTTPS，用的就是 TLS</p>
+</li>
+<li><p>作用：</p>
+<ol>
+<li>流量加密，别人看不到你在访问什么</li>
+<li>伪装成正常访问网站的流量，不容易被识别是代理</li>
+</ol>
+</li>
+<li><p>你链接里的 <code>sni</code>、<code>alpn</code>、<code>allowInsecure</code> 都是 TLS 的配套设置</p>
+</li>
+</ul>
+<hr>
+<h5 id="3-WARP"><a href="#3-WARP" class="headerlink" title="3. WARP"></a>3. WARP</h5><p><strong>简单说：Cloudflare 出的一款免费 “网络加速 &#x2F; 隐藏 IP 工具”</strong></p>
+<ul>
+<li><p>可以单独当轻量 VPN 用</p>
+</li>
+<li><p>也可以<strong>跟你的代理节点搭配使用</strong>，做中转、换 IP、防封、加速</p>
+</li>
+<li><p>特点：免费、稳定、全球节点多</p>
+</li>
+<li><p>很多人用 WARP 来：</p>
+<ul>
+<li>给 VPS 加速</li>
+<li>隐藏真实出口 IP</li>
+<li>配合节点提高稳定性</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="4-serv00"><a href="#4-serv00" class="headerlink" title="4. serv00"></a>4. serv00</h5><p><strong>简单说：一个国外的【免费虚拟主机 &#x2F; 免费小服务器】</strong></p>
+<ul>
+<li><p>网址：<a class="link"   target="_blank" rel="noopener" href="https://serv00.com/" >serv00.com<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>提供免费的小空间、小带宽、小内存</p>
+</li>
+<li><p>很多人用它：</p>
+<ul>
+<li>搭建简易代理节点</li>
+<li>跑小脚本、做中转</li>
+<li>测试服务、临时用</li>
+</ul>
+</li>
+<li><p>优点：完全免费</p>
+</li>
+<li><p>缺点：资源少、限制多、容易被滥用封号</p>
+</li>
+</ul>
+<hr>
+<h1 id="Cloudflare-vless-trojan-项目核心原理"><a href="#Cloudflare-vless-trojan-项目核心原理" class="headerlink" title="Cloudflare-vless-trojan 项目核心原理"></a>Cloudflare-vless-trojan 项目核心原理</h1><p>这个项目的本质，就是<strong>把 Cloudflare 免费的 Workers&#x2F;Pages 当成一台全球免费中转服务器，用来转发你的代理流量</strong>。</p>
+<hr>
+<h2 id="1-整体流程（最核心）"><a href="#1-整体流程（最核心）" class="headerlink" title="1. 整体流程（最核心）"></a>1. 整体流程（最核心）</h2><ol>
+<li><p>你的设备 → 发送<strong>加密代理流量</strong>到 Cloudflare</p>
+</li>
+<li><p>Cloudflare Workers&#x2F;Pages（JS 脚本）<strong>接收并解析</strong>你的流量</p>
+</li>
+<li><p>Cloudflare 帮你<strong>转发请求</strong>到目标网站</p>
+</li>
+<li><p>目标网站返回数据 → Cloudflare → 回到你的设备</p>
+<p>→ 目标网站只看到 Cloudflare IP，看不到你的真实 IP</p>
+</li>
+</ol>
+<hr>
+<h2 id="2-流量伪装原理（为什么不被墙）"><a href="#2-流量伪装原理（为什么不被墙）" class="headerlink" title="2. 流量伪装原理（为什么不被墙）"></a>2. 流量伪装原理（为什么不被墙）</h2><p>它把代理流量<strong>层层包装成正常网页流量</strong>：</p>
+<ul>
+<li><strong>VLESS&#x2F;Trojan</strong>：给流量加密，防止被识别</li>
+<li><strong>WebSocket（WS）</strong>：伪装成网页聊天数据</li>
+<li><strong>TLS（HTTPS）</strong>：套上加密外壳，看起来就是正常访问网站</li>
+<li><strong>端口 443&#x2F;80</strong>：用最常见的网页端口，不触发拦截</li>
+</ul>
+<hr>
+<h2 id="3-Workers-Pages-为什么能做代理？"><a href="#3-Workers-Pages-为什么能做代理？" class="headerlink" title="3. Workers&#x2F;Pages 为什么能做代理？"></a>3. Workers&#x2F;Pages 为什么能做代理？</h2><ul>
+<li>Cloudflare 允许免费运行 JS 代码</li>
+<li>代码功能：<strong>接收流量 → 转发 → 回传</strong></li>
+<li>相当于一台<strong>免费、不限流量、全球节点</strong>的转发服务器</li>
+</ul>
+<hr>
+<h2 id="4-ProxyIP-是干嘛的？（关键）"><a href="#4-ProxyIP-是干嘛的？（关键）" class="headerlink" title="4. ProxyIP 是干嘛的？（关键）"></a>4. ProxyIP 是干嘛的？（关键）</h2><ul>
+<li>直接用 Workers 访问 <strong>CF 系网站</strong>（X、ChatGPT、CF 官网）会被拦截</li>
+<li><strong>ProxyIP &#x3D; 第二台中转服务器</strong></li>
+<li>路径变成：你 → CF Workers → ProxyIP → 目标网站</li>
+<li>作用：绕过 CF 自身的安全校验，正常打开这些网站</li>
+</ul>
+<hr>
+<h2 id="5-ECH-分片-防封原理"><a href="#5-ECH-分片-防封原理" class="headerlink" title="5. ECH &#x2F; 分片 防封原理"></a>5. ECH &#x2F; 分片 防封原理</h2><ul>
+<li><strong>ECH</strong>：加密域名信息，防火墙不知道你访问的域名</li>
+<li><strong>分片</strong>：把数据包拆小，绕过流量特征检测</li>
+<li>目的：让防火墙<strong>无法识别这是代理流量</strong></li>
+</ul>
+<hr>
+<h2 id="一句话终极总结"><a href="#一句话终极总结" class="headerlink" title="一句话终极总结"></a>一句话终极总结</h2><p><strong>用 Cloudflare 免费服务器做中转，把代理流量伪装成正常 HTTPS 网页流量，配合加密与二次转发，实现稳定、免费、难被封锁的网络代理。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">你的设备</span><br><span class="line">   ↓</span><br><span class="line">加密流量（VLESS/Trojan）</span><br><span class="line">   ↓</span><br><span class="line">WebSocket 伪装</span><br><span class="line">   ↓</span><br><span class="line">HTTPS(TLS) 加密</span><br><span class="line">   ↓</span><br><span class="line">Cloudflare Workers/Pages（免费中转）</span><br><span class="line">   ↓</span><br><span class="line">（可选：ProxyIP 二次中转）</span><br><span class="line">   ↓</span><br><span class="line">目标网站（Google、ChatGPT等）</span><br></pre></td></tr></table></figure>
+
+<p><strong>协议分层 + 流量链路：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">【应用层】</span><br><span class="line">你的客户端</span><br><span class="line">  ├─ 代理协议：VLESS / Trojan （加密、认证、核心隧道）</span><br><span class="line">  └─ 承载协议：WebSocket (WS)    （把代理流伪装成网页长连接）</span><br><span class="line"></span><br><span class="line">【传输层 &amp; 安全层】</span><br><span class="line">  ↓</span><br><span class="line">TLS 1.2/1.3 (HTTPS)               （外层加密，端口 443）</span><br><span class="line">  ↓</span><br><span class="line">TCP / IPv4 / IPv6</span><br><span class="line"></span><br><span class="line">【网络层】</span><br><span class="line">→ 互联网 → 防火墙/GFW</span><br><span class="line">（看到的只是：正常 HTTPS + WebSocket 流量，无代理特征）</span><br><span class="line"></span><br><span class="line">【Cloudflare 边缘节点】</span><br><span class="line">  ↓</span><br><span class="line">Cloudflare Workers / Pages</span><br><span class="line">（运行你上传的 JS 脚本：代理服务端）</span><br><span class="line">脚本作用：</span><br><span class="line">  1. 解密 TLS</span><br><span class="line">  2. 解析 WebSocket</span><br><span class="line">  3. 识别 VLESS/Trojan 头部</span><br><span class="line">  4. 拿到真实目标地址</span><br><span class="line"></span><br><span class="line">【转发出口】</span><br><span class="line">情况A：普通转发</span><br><span class="line">  Workers → 直接访问目标网站</span><br><span class="line"></span><br><span class="line">情况B：解锁 ChatGPT / 防 CF 拦截</span><br><span class="line">  Workers → ProxyIP（第三方中转IP）→ 目标网站</span><br><span class="line"></span><br><span class="line">【目标服务器】</span><br><span class="line">只看到：ProxyIP 或 Cloudflare IP</span><br><span class="line">完全看不到你的真实IP</span><br></pre></td></tr></table></figure>
+                    
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                用Google  clound  免费方案部署vps
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis">
+                2026/03/22/2026.04.06用Google  clound  免费方案部署vps/
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    Author
+                </div>
+                <div class="content">阿九</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    Published
+                </div>
+                <div class="content">2026-03-22 21:20</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    License
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">
+                        
+                            <i class="fa-brands fa-creative-commons"></i>
+                            <i class="fa-brands fa-creative-commons-by"></i>
+                            <i class="fa-brands fa-creative-commons-nc"></i>
+                            <i class="fa-brands fa-creative-commons-sa"></i>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/bolg-source/2026/03/22/2026.3.30/"
+                                   title="建站二"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">建站二</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8Google-clound-%E5%85%8D%E8%B4%B9%E6%96%B9%E6%A1%88%E9%83%A8%E7%BD%B2vps"><span class="nav-text">用Google  clound  免费方案部署vps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%80%BB%E5%8E%9F%E7%90%86"><span class="nav-text">一、一句话总原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%EF%BC%88%E8%B6%85%E7%AE%80%E5%8D%95%EF%BC%89"><span class="nav-text">二、完整流程（超简单）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AE%83%E5%88%B0%E5%BA%95%E5%B9%B2%E4%BA%86%E5%93%AA-4-%E4%BB%B6%E4%BA%8B%EF%BC%9F%EF%BC%88%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%EF%BC%89"><span class="nav-text">三、它到底干了哪 4 件事？（核心原理）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E6%A0%B8%E5%BF%83%E7%A8%8B%E5%BA%8F%EF%BC%9Asing-box"><span class="nav-text">1. 安装核心程序：sing-box</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%90%8C%E6%97%B6%E5%BC%80%E5%90%AF%E5%A4%9A%E7%A7%8D%E7%BF%BB%E5%A2%99%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%BA%94%E5%8D%8F%E8%AE%AE-%E4%B8%89%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="nav-text">2. 同时开启多种翻墙协议（五协议 &#x2F; 三协议）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%AF%81%E4%B9%A6%E3%80%81%E7%AB%AF%E5%8F%A3%E3%80%81%E4%BC%AA%E8%A3%85"><span class="nav-text">3. 自动配置证书、端口、伪装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%87%AA%E5%8A%A8%E5%81%9A%E5%88%86%E6%B5%81%E3%80%81%E8%A7%A3%E9%94%81%E3%80%81%E5%8A%A0%E9%80%9F"><span class="nav-text">4. 自动做分流、解锁、加速</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%92%8C%E4%B9%8B%E5%89%8D-CF-Workers-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-text">四、和之前 CF Workers 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%9C%80%E5%85%B3%E9%94%AE%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AE%83%E4%B8%8D%E5%AE%B9%E6%98%93%E8%A2%AB%E5%B0%81%EF%BC%9F"><span class="nav-text">五、最关键：为什么它不容易被封？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E7%BB%88%E6%9E%81%E6%9E%81%E7%AE%80%E6%80%BB%E7%BB%93"><span class="nav-text">六、终极极简总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5%E8%A7%A3%E9%87%8A"><span class="nav-text">概念解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS%E8%AE%B0%E5%BD%95%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="nav-text">DNS记录类型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP%E5%9C%B0%E5%9D%80"><span class="nav-text">IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">名称服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E7%AD%BE%E7%9A%84%E8%AF%81%E4%B9%A6%E5%92%8C%E8%87%AA%E6%9C%89%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%81%E4%B9%A6%E5%8C%BA%E5%88%AB"><span class="nav-text">自签的证书和自有域名的证书区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uuid%E3%80%81TLS%E3%80%81WARP%E3%80%81serv00%E8%A7%A3%E9%87%8A"><span class="nav-text">uuid、TLS、WARP、serv00解释</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-UUID"><span class="nav-text">1. UUID</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-TLS"><span class="nav-text">2. TLS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-WARP"><span class="nav-text">3. WARP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-serv00"><span class="nav-text">4. serv00</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloudflare-vless-trojan-%E9%A1%B9%E7%9B%AE%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86"><span class="nav-text">Cloudflare-vless-trojan 项目核心原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B%EF%BC%88%E6%9C%80%E6%A0%B8%E5%BF%83%EF%BC%89"><span class="nav-text">1. 整体流程（最核心）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%B5%81%E9%87%8F%E4%BC%AA%E8%A3%85%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%A2%AB%E5%A2%99%EF%BC%89"><span class="nav-text">2. 流量伪装原理（为什么不被墙）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Workers-Pages-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E5%81%9A%E4%BB%A3%E7%90%86%EF%BC%9F"><span class="nav-text">3. Workers&#x2F;Pages 为什么能做代理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-ProxyIP-%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84%EF%BC%9F%EF%BC%88%E5%85%B3%E9%94%AE%EF%BC%89"><span class="nav-text">4. ProxyIP 是干嘛的？（关键）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-ECH-%E5%88%86%E7%89%87-%E9%98%B2%E5%B0%81%E5%8E%9F%E7%90%86"><span class="nav-text">5. ECH &#x2F; 分片 防封原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E7%BB%88%E6%9E%81%E6%80%BB%E7%BB%93"><span class="nav-text">一句话终极总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/bolg-source/">阿九</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+                <span class="count-item border-box word">
+                    <span class="item-type border-box">Total words</span>
+                    <span class="item-value border-box word">24.6k</span>
+                </span>
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8Google-clound-%E5%85%8D%E8%B4%B9%E6%96%B9%E6%A1%88%E9%83%A8%E7%BD%B2vps"><span class="nav-text">用Google  clound  免费方案部署vps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%80%BB%E5%8E%9F%E7%90%86"><span class="nav-text">一、一句话总原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%EF%BC%88%E8%B6%85%E7%AE%80%E5%8D%95%EF%BC%89"><span class="nav-text">二、完整流程（超简单）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AE%83%E5%88%B0%E5%BA%95%E5%B9%B2%E4%BA%86%E5%93%AA-4-%E4%BB%B6%E4%BA%8B%EF%BC%9F%EF%BC%88%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%EF%BC%89"><span class="nav-text">三、它到底干了哪 4 件事？（核心原理）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E6%A0%B8%E5%BF%83%E7%A8%8B%E5%BA%8F%EF%BC%9Asing-box"><span class="nav-text">1. 安装核心程序：sing-box</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%90%8C%E6%97%B6%E5%BC%80%E5%90%AF%E5%A4%9A%E7%A7%8D%E7%BF%BB%E5%A2%99%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%BA%94%E5%8D%8F%E8%AE%AE-%E4%B8%89%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="nav-text">2. 同时开启多种翻墙协议（五协议 &#x2F; 三协议）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E8%AF%81%E4%B9%A6%E3%80%81%E7%AB%AF%E5%8F%A3%E3%80%81%E4%BC%AA%E8%A3%85"><span class="nav-text">3. 自动配置证书、端口、伪装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%87%AA%E5%8A%A8%E5%81%9A%E5%88%86%E6%B5%81%E3%80%81%E8%A7%A3%E9%94%81%E3%80%81%E5%8A%A0%E9%80%9F"><span class="nav-text">4. 自动做分流、解锁、加速</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%92%8C%E4%B9%8B%E5%89%8D-CF-Workers-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-text">四、和之前 CF Workers 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%9C%80%E5%85%B3%E9%94%AE%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AE%83%E4%B8%8D%E5%AE%B9%E6%98%93%E8%A2%AB%E5%B0%81%EF%BC%9F"><span class="nav-text">五、最关键：为什么它不容易被封？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E7%BB%88%E6%9E%81%E6%9E%81%E7%AE%80%E6%80%BB%E7%BB%93"><span class="nav-text">六、终极极简总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5%E8%A7%A3%E9%87%8A"><span class="nav-text">概念解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS%E8%AE%B0%E5%BD%95%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="nav-text">DNS记录类型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP%E5%9C%B0%E5%9D%80"><span class="nav-text">IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">名称服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E7%AD%BE%E7%9A%84%E8%AF%81%E4%B9%A6%E5%92%8C%E8%87%AA%E6%9C%89%E5%9F%9F%E5%90%8D%E7%9A%84%E8%AF%81%E4%B9%A6%E5%8C%BA%E5%88%AB"><span class="nav-text">自签的证书和自有域名的证书区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uuid%E3%80%81TLS%E3%80%81WARP%E3%80%81serv00%E8%A7%A3%E9%87%8A"><span class="nav-text">uuid、TLS、WARP、serv00解释</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-UUID"><span class="nav-text">1. UUID</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-TLS"><span class="nav-text">2. TLS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-WARP"><span class="nav-text">3. WARP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-serv00"><span class="nav-text">4. serv00</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloudflare-vless-trojan-%E9%A1%B9%E7%9B%AE%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86"><span class="nav-text">Cloudflare-vless-trojan 项目核心原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B%EF%BC%88%E6%9C%80%E6%A0%B8%E5%BF%83%EF%BC%89"><span class="nav-text">1. 整体流程（最核心）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%B5%81%E9%87%8F%E4%BC%AA%E8%A3%85%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%A2%AB%E5%A2%99%EF%BC%89"><span class="nav-text">2. 流量伪装原理（为什么不被墙）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Workers-Pages-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E5%81%9A%E4%BB%A3%E7%90%86%EF%BC%9F"><span class="nav-text">3. Workers&#x2F;Pages 为什么能做代理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-ProxyIP-%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84%EF%BC%9F%EF%BC%88%E5%85%B3%E9%94%AE%EF%BC%89"><span class="nav-text">4. ProxyIP 是干嘛的？（关键）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-ECH-%E5%88%86%E7%89%87-%E9%98%B2%E5%B0%81%E5%8E%9F%E7%90%86"><span class="nav-text">5. ECH &#x2F; 分片 防封原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E7%BB%88%E6%9E%81%E6%80%BB%E7%BB%93"><span class="nav-text">一句话终极总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/bolg-source/js/utils.js"></script>
+
+<script src="/bolg-source/js/header-shrink.js"></script>
+
+<script src="/bolg-source/js/back2top.js"></script>
+
+<script src="/bolg-source/js/toggle-theme.js"></script>
+
+<script src="/bolg-source/js/code-block.js"></script>
+
+<script src="/bolg-source/js/main.js"></script>
+
+<script src="/bolg-source/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/bolg-source/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/bolg-source/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/bolg-source/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/bolg-source/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+            
+<script src="/bolg-source/js/post/copyright-info.js"></script>
+
+        
+
+        <!-- share -->
+        
+            
+<script src="/bolg-source/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/bolg-source/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
